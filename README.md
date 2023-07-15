@@ -40,15 +40,15 @@ public class ExampleScript : MonoBehaviour
 {
   private void OnEnable()
   {
-      SimpleEvents.events.onEvent += EventReceived;
+      SimpleEvents.events.onEvent += SimpleEventReceived;
   }
 
   private void OnDisable()
   {
-      SimpleEvents.events.onEvent -= EventReceived;
+      SimpleEvents.events.onEvent -= SimpleEventReceived;
   }
   
-  void EventReceived(string eventName) 
+  void SimpleEventReceived(string eventName) 
   {
     if (eventName == "sampleName")
     {
@@ -78,15 +78,15 @@ public class ExampleScript : MonoBehaviour
 {
   private void OnEnable()
   {
-      SimpleEvents.events.onIntEvent += EventReceived;
+      SimpleEvents.events.onIntEvent += IntEventReceived;
   }
 
   private void OnDisable()
   {
-      SimpleEvents.events.onIntEvent -= EventReceived;
+      SimpleEvents.events.onIntEvent -= IntEventReceived;
   }
   
-  void EventReceived(string eventName, int value) 
+  void IntEventReceived(string eventName, int value) 
   {
     if (eventName == "sampleName")
     {
