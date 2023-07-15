@@ -3,7 +3,7 @@ A simple message based eventsystem for unity
 
 ## Usage
 
-Just attach this script on a gameobject in the scene -> Done
+Just attach the SimpleEvents.cs script on a gameobject in the scene -> Done
 
 ## Example
 
