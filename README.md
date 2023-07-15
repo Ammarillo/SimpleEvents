@@ -1,6 +1,10 @@
 # SimpleEvents
 A simple message based eventsystem for unity
 
+## Usage
+
+Just attach the `SimpleEvents.cs` script on a gameobject in the scene -> Done
+
 ## Supported Datatypes
 - Int
 - Float
@@ -14,10 +18,6 @@ A simple message based eventsystem for unity
 - Quaternion
 - Component
 - GameObject
-
-## Usage
-
-Just attach the `SimpleEvents.cs` script on a gameobject in the scene -> Done
 
 ## Examples
 
