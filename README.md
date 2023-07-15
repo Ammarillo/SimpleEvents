@@ -26,20 +26,26 @@ Call Simple Event
 ```cs
 using Aui.SimpleEvents;
 
-SimpleEvents.events.Event("sampleName");
+public class ExampleScript : MonoBehaviour
+{
+  SimpleEvents.events.Event("sampleName");
+}
 ```
 
 Listening for Simple Events
 ```cs
 using Aui.SimpleEvents;
 
-SimpleEvents.events.onEvent += EventReceived;
-
-void EventReceived(string eventName) 
+public class ExampleScript : MonoBehaviour
 {
-  if (eventName == "sampleName")
+  SimpleEvents.events.onEvent += EventReceived;
+  
+  void EventReceived(string eventName) 
   {
-    do Something...;
+    if (eventName == "sampleName")
+    {
+      do Something...;
+    }
   }
 }
 ```
@@ -49,7 +55,10 @@ Call Simple Event with integer value
 ```cs
 using Aui.SimpleEvents;
 
-SimpleEvents.events.IntEvent("sampleName", value);
+public class ExampleScript : MonoBehaviour
+{
+  SimpleEvents.events.IntEvent("sampleName", value);
+}
 ```
 
 Listening for Simple Events
@@ -57,13 +66,16 @@ Listening for Simple Events
 ```cs
 using Aui.SimpleEvents;
 
-SimpleEvents.events.onIntEvent += EventReceived;
-
-void EventReceived(string eventName, int value) 
+public class ExampleScript : MonoBehaviour
 {
-  if (eventName == "sampleName")
+  SimpleEvents.events.onIntEvent += EventReceived;
+  
+  void EventReceived(string eventName, int value) 
   {
-    do Something...;
+    if (eventName == "sampleName")
+    {
+      do Something...;
+    }
   }
 }
 ```
