@@ -38,14 +38,9 @@ using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-  private void OnEnable()
+  void Start()
   {
       SimpleEvents.events.onEvent += SimpleEventReceived;
-  }
-
-  private void OnDisable()
-  {
-      SimpleEvents.events.onEvent -= SimpleEventReceived;
   }
   
   void SimpleEventReceived(string eventName) 
@@ -76,14 +71,9 @@ using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-  private void OnEnable()
+  void Start()
   {
       SimpleEvents.events.onIntEvent += IntEventReceived;
-  }
-
-  private void OnDisable()
-  {
-      SimpleEvents.events.onIntEvent -= IntEventReceived;
   }
   
   void IntEventReceived(string eventName, int value) 
