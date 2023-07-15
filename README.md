@@ -57,7 +57,7 @@ using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-  SimpleEvents.events.IntEvent("sampleName", 69);
+  SimpleEvents.events.IntEvent("sampleName", 123);
 }
 ```
 
