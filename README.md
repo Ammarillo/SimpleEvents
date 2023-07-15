@@ -23,7 +23,7 @@ Just attach the `SimpleEvents.cs` script on a gameobject in the scene -> Done
 
 ### Example 1 - Simple Event
 Call Simple Event
-```cs
+```
 using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
@@ -33,7 +33,7 @@ public class ExampleScript : MonoBehaviour
 ```
 
 Listening for Simple Events
-```cs
+```
 using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
@@ -52,7 +52,7 @@ public class ExampleScript : MonoBehaviour
 
 ### Example 2 - Simple event with integer value
 Call Simple Event with integer value
-```cs
+```
 using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
@@ -63,7 +63,7 @@ public class ExampleScript : MonoBehaviour
 
 Listening for Simple Events
 
-```cs
+```
 using Aui.SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
