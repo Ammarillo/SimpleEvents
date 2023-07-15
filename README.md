@@ -52,7 +52,7 @@ public class ExampleScript : MonoBehaviour
   {
     if (eventName == "sampleName")
     {
-      do Something...;
+      //do Something...;
     }
   }
 }
@@ -90,7 +90,7 @@ public class ExampleScript : MonoBehaviour
   {
     if (eventName == "sampleName")
     {
-      do Something...;
+      //do Something...;
     }
   }
 }
