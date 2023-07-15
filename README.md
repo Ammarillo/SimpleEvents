@@ -1,6 +1,20 @@
 # SimpleEvents
 A simple message based eventsystem for unity
 
+## Supported Datatypes
+- Int
+- Float
+- Bool
+- String
+- Object
+- Vector3
+- Vector3Int
+- Vector2
+- Vector2Int
+- Quaternion
+- Component
+- GameObject
+
 ## Usage
 
 Just attach the `SimpleEvents.cs` script on a gameobject in the scene -> Done
