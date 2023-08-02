@@ -84,3 +84,6 @@ public class ExampleScript : MonoBehaviour
     }
 }
 ```
+
+### troubleshooting
+If something does not work, make sure you have added the SimpleEvents script to an active GameObject in your scene.
