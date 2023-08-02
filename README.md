@@ -3,85 +3,86 @@ A simple message based eventsystem for unity
 
 ## Usage
 
-Just attach the `SimpleEvents.cs` script on a gameobject in the scene -> Done
+Just attach the `SimpleEvents.cs` script to a GameObject in your scene. Done!
 
 ## Supported Datatypes
-- Int
-- Float
-- Bool
-- String
-- Object
-- Vector3
-- Vector3Int
-- Vector2
-- Vector2Int
-- Quaternion
-- Component
-- GameObject
+The `SimpleEvents.cs` script supports all data types by using a params array of objects. This means you can pass any type of data with an event.
 
 ## Examples
 
 ### Example 1 - Simple Event
 Call Simple Event
-```
-using Aui.SimpleEvents;
+```csharp
+using UnityEngine;
 
 public class ExampleScript : MonoBehaviour
 {
-  SimpleEvents.events.Event("sampleName");
+    void SomeMethod()
+    {
+        SimpleEvents.events.SimpleEvent("sampleName");
+    }
 }
 ```
 
 Listening for Simple Events
-```
-using Aui.SimpleEvents;
+```csharp
+using System;
+using UnityEngine;
+using SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-  void Start()
-  {
-      SimpleEvents.events.onEvent += SimpleEventReceived;
-  }
-  
-  void SimpleEventReceived(string eventName) 
-  {
-    if (eventName == "sampleName")
+    void Start()
     {
-      //do Something...;
+        SimpleEvents.events.onSimpleEvent += SimpleEventReceived;
     }
-  }
+  
+    void SimpleEventReceived(string eventName, object[] values) 
+    {
+        if (eventName == "sampleName")
+        {
+            //do Something...;
+        }
+    }
 }
 ```
 
 ### Example 2 - Simple event with integer value
 Call Simple Event with integer value
-```
-using Aui.SimpleEvents;
+```csharp
+using System;
+using UnityEngine;
+using SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-  SimpleEvents.events.IntEvent("sampleName", 123);
+  void SomeMethod()
+  {
+      SimpleEvents.events.SimpleEvent("sampleName", 123);
+  }
 }
 ```
 
 Listening for Simple Events
 
-```
-using Aui.SimpleEvents;
+```csharp
+using System;
+using UnityEngine;
+using SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-  void Start()
-  {
-      SimpleEvents.events.onIntEvent += IntEventReceived;
-  }
-  
-  void IntEventReceived(string eventName, int value) 
-  {
-    if (eventName == "sampleName")
+    void Start()
     {
-      //do Something...;
+        SimpleEvents.events.onSimpleEvent += SimpleEventReceived;
     }
-  }
+  
+    void SimpleEventReceived(string eventName, object[] values) 
+    {
+        if (eventName == "sampleName" && values.Length > 0 && values[0] is int intValue)
+        {
+            //do Something with intValue...;
+        }
+    }
 }
 ```
