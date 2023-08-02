@@ -20,7 +20,7 @@ public class ExampleScript : MonoBehaviour
 {
     void SomeMethod()
     {
-        SimpleEvents.events.SimpleEvent("sampleName");
+        SimpleEvents.Event("sampleName");
     }
 }
 ```
@@ -34,7 +34,7 @@ public class ExampleScript : MonoBehaviour
 {
     void Start()
     {
-        SimpleEvents.events.onSimpleEvent += SimpleEventReceived;
+        SimpleEvents.onEvent += SimpleEventReceived;
     }
   
     void SimpleEventReceived(string eventName, object[] values) 
@@ -57,7 +57,7 @@ public class ExampleScript : MonoBehaviour
 {
   void SomeMethod()
   {
-      SimpleEvents.events.SimpleEvent("sampleName", 123);
+      SimpleEvents.SimpleEvent("sampleName", 123);
   }
 }
 ```
@@ -72,7 +72,7 @@ public class ExampleScript : MonoBehaviour
 {
     void Start()
     {
-        SimpleEvents.events.onSimpleEvent += SimpleEventReceived;
+        SimpleEvents.onEvent += SimpleEventReceived;
     }
   
     void SimpleEventReceived(string eventName, object[] values) 
