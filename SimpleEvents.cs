@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aui.SimpleEvents
+namespace SimpleEvents
 {
     /// <summary>
     /// Make sure to attach this script on GameObject in your active scene.
