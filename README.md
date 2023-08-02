@@ -14,6 +14,7 @@ The `SimpleEvents.cs` script supports all data types by using a params array of 
 Call Simple Event
 ```csharp
 using UnityEngine;
+using SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class ExampleScript : MonoBehaviour
 
 Listening for Simple Events
 ```csharp
-using System;
 using UnityEngine;
 using SimpleEvents;
 
@@ -50,7 +50,6 @@ public class ExampleScript : MonoBehaviour
 ### Example 2 - Simple event with integer value
 Call Simple Event with integer value
 ```csharp
-using System;
 using UnityEngine;
 using SimpleEvents;
 
@@ -66,7 +65,6 @@ public class ExampleScript : MonoBehaviour
 Listening for Simple Events
 
 ```csharp
-using System;
 using UnityEngine;
 using SimpleEvents;
 
