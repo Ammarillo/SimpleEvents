@@ -32,9 +32,14 @@ using SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-    void Start()
+    private void OnEnable()
     {
         SimpleEvents.onEvent += SimpleEventReceived;
+    }
+
+    private void OnDisable()
+    {
+        SimpleEvents.onEvent -= SimpleEventReceived;
     }
   
     void SimpleEventReceived(string eventName, object[] values) 
@@ -70,9 +75,14 @@ using SimpleEvents;
 
 public class ExampleScript : MonoBehaviour
 {
-    void Start()
+    private void OnEnable()
     {
         SimpleEvents.onEvent += SimpleEventReceived;
+    }
+
+    private void OnDisable()
+    {
+        SimpleEvents.onEvent -= SimpleEventReceived;
     }
   
     void SimpleEventReceived(string eventName, object[] values) 
