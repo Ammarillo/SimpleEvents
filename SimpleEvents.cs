@@ -3,69 +3,72 @@ using UnityEngine;
 
 namespace SimpleEvents
 {
-    /// <summary>
-    /// Singleton instance of SimpleEvents.
-    /// </summary>
-    private static SimpleEvents instance;
-
-    /// <summary>
-    /// Receives all SimpleEvents.
-    /// </summary>
-    private event Action<string, object[]> onSimpleEvent;
-
-    /// <summary>
-    /// Receives all SimpleEvents.
-    /// </summary>
-    public static event Action<string, object[]> onEvent;
-
-    private void Awake()
+    public class SimpleEvents : MonoBehaviour
     {
-        // Ensure there is only one instance of SimpleEvents.
-        if (instance == null)
+        /// <summary>
+        /// Singleton instance of SimpleEvents.
+        /// </summary>
+        private static SimpleEvents instance;
+
+        /// <summary>
+        /// Receives all SimpleEvents.
+        /// </summary>
+        private event Action<string, object[]> onSimpleEvent;
+
+        /// <summary>
+        /// Receives all SimpleEvents.
+        /// </summary>
+        public static event Action<string, object[]> onEvent;
+
+        private void Awake()
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            // Ensure there is only one instance of SimpleEvents.
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+
+        /// <summary>
+        /// Sends a SimpleEvent to all subscribers with any number of data.
+        /// </summary>
+        private void SimpleEvent(string eventName, params object[] data)
         {
-            Destroy(gameObject);
+            onSimpleEvent?.Invoke(eventName, data);
         }
-    }
 
-    /// <summary>
-    /// Sends a SimpleEvent to all subscribers with any number of data.
-    /// </summary>
-    private void SimpleEvent(string eventName, params object[] data)
-    {
-        onSimpleEvent?.Invoke(eventName, data);
-    }
+        /// <summary>
+        /// Adds a delegate to the event.
+        /// </summary>
+        public static void AddOnSimpleEvent(Action<string, object[]> action)
+        {
+            instance.onSimpleEvent += action;
+        }
 
-    /// <summary>
-    /// Adds a delegate to the event.
-    /// </summary>
-    public static void AddOnSimpleEvent(Action<string, object[]> action)
-    {
-        instance.onSimpleEvent += action;
-    }
+        /// <summary>
+        /// Removes a delegate from the event.
+        /// </summary>
+        public static void RemoveOnSimpleEvent(Action<string, object[]> action)
+        {
+            instance.onSimpleEvent -= action;
+        }
 
-    /// <summary>
-    /// Removes a delegate from the event.
-    /// </summary>
-    public static void RemoveOnSimpleEvent(Action<string, object[]> action)
-    {
-        instance.onSimpleEvent -= action;
-    }
+        /// <summary>
+        /// Sends a SimpleEvent to all subscribers with any number of data.
+        /// </summary>
+        public static void Event(string eventName, params object[] data)
+        {
+            // First, trigger instance event
+            instance.SimpleEvent(eventName, data);
 
-    /// <summary>
-    /// Sends a SimpleEvent to all subscribers with any number of data.
-    /// </summary>
-    public static void Event(string eventName, params object[] data)
-    {
-        // First, trigger instance event
-        instance.SimpleEvent(eventName, data);
-
-        // Then, trigger static event
-        onEvent?.Invoke(eventName, data);
+            // Then, trigger static event
+            onEvent?.Invoke(eventName, data);
+        }
     }
 }
 
