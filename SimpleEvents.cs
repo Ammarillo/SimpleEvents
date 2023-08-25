@@ -28,6 +28,10 @@ namespace SimpleEvents
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+            else
+            {
+                this.enabled = false;
+            }
         }
 
         /// <summary>
