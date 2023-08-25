@@ -6,7 +6,7 @@ A simple message based eventsystem for unity
 Just attach the `SimpleEvents.cs` script to a GameObject in your scene. Done!
 
 ## Supported Datatypes
-The `SimpleEvents.cs` script supports all data types by using a params array of objects. This means you can pass any type of data with an event.
+The `SimpleEvents.cs` script supports all data types by using an array of objects. This means that you can pass any type of data with an event.
 
 ## Examples
 
