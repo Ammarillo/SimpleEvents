@@ -62,7 +62,7 @@ public class ExampleScript : MonoBehaviour
 {
   void SomeMethod()
   {
-      SimpleEvents.SimpleEvent("sampleName", 123);
+      SimpleEvents.SimpleEvent("sampleName", 123, 12.3f);
   }
 }
 ```
@@ -87,9 +87,9 @@ public class ExampleScript : MonoBehaviour
   
     void SimpleEventReceived(string eventName, object[] values) 
     {
-        if (eventName == "sampleName" && values.Length > 0 && values[0] is int intValue)
+        if (eventName == "sampleName" && values.Length == 2 && values[0] is int intValue && values[1] is float floatValue)
         {
-            //do Something with intValue...;
+            //do Something with intValue and floatValue...;
         }
     }
 }
