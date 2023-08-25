@@ -62,7 +62,7 @@ public class ExampleScript : MonoBehaviour
 {
   void SomeMethod()
   {
-      SimpleEvents.SimpleEvent("sampleName", 123, 12.3f);
+      SimpleEvents.SimpleEvent("sampleName", 123, 4.5f);
   }
 }
 ```
